@@ -6,6 +6,15 @@ gem 'rails', '4.2.4'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'autoprefixer-rails'
+gem 'font-awesome-sass', '~> 4.4.0'
+
+# Authorization
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'dotenv-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -55,6 +64,5 @@ group :development do
 end
 
 group :production do
-  gem 'pg
-  '
+  gem 'pg'
 end
