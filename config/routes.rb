@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :activities
   resources :availabilities
   resources :skill_levels
   resources :users
