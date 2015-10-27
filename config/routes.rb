@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :availabilities
   resources :skill_levels
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
