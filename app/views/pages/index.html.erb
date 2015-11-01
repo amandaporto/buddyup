@@ -1,17 +1,194 @@
-<div class="full">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <!-- <img alt="Brand" src="..."> -->
-            <p> buddyUP.me </p>
-          </a>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">
+          <%= image_tag("teamup_clear.png") %>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#howitworks">How It Works</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#about">About </a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#contact">Contact </a>
+          </li>
+          <% if current_user %>
+            <li>
+              <%= link_to 'logout', signout_path, method: :delete, data: { confirm: "Nooo!! Don't go!! Sure you wanna leave?" } %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Intro Header -->
+  <header class="intro">
+    <div class="intro-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h1 class="brand-heading">HELLO !</h1>
+            <!-- <p class="intro-text">Wanna team UP?</p> -->
+            <div class="signin-container">
+              <ul>
+                <!-- <li>
+                  <%= link_to 'Sign in', signin_path, class:"btn btn-default-solid btn-lg" %>
+                </li> -->
+
+                <li>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-default-solid btn-lg" data-toggle="modal" data-target="#myModal">
+                    Sign In
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Hiya, Welcome Back!</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>How would you like to sign in?</p>
+                          <%= link_to 'Facebook', auth_path(provider: 'facebook'), class:"btn btn-default btn-lg" %>
+                          <%= link_to 'Twitter', auth_path(provider: 'twitter'), class:"btn btn-default btn-lg" %>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-default-solid btn-lg" data-toggle="modal" data-target="#myModal1">
+                    Sign Up
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1Label">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModal1Label">Welcome to the Team!</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>How would you like to sign up?</p>
+
+                          <%= link_to 'Facebook', auth_path(provider: 'facebook'), class:"btn btn-default btn-lg" %>
+                          <%= link_to 'Twitter', auth_path(provider: 'twitter'), class:"btn btn-default btn-lg" %>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- <li>
+                  <%= link_to 'Sign up', signup_path, class:"btn btn-default-solid btn-lg" %>
+                </li> -->
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a href="#howitworks" class="btn btn-circle page-scroll">
+          <i class="fa fa-angle-double-down animated"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- How It Works Section -->
+  <section id="howitworks" class="container content-section text-center">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>How It Works</h2>
+        <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on the preview page. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
+        <p>This theme features stock photos by Gratisography along with a custom Google Maps skin courtesy of Snazzy Maps.</p>
+        <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="content-section text-center">
+    <div class="about-section">
+      <div class="container">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h2>About team UP</h2>
+          <p>There is no fun in wanting to enjoy a beautiful day outside, but not having anyone to enjoy it with. We were born out of a passion to socialize and to have fun doing what we enjoy. Then BOOM! The idea of merging fun, people, and activities was born.</p>
+          <a href="###########" class="btn btn-default-solid btn-lg">Wanna Team Up?</a>
         </div>
       </div>
-    </nav>
-</div>
+    </div>
+  </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="container content-section text-center">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Contact team UP</h2>
+        <p>Feel free to email us to provide feedback , give us suggestions, or to just say hello!</p>
+        <p><a href="mailto:hello@wannateamup.com">hello@wannateamup.com</a>
+        </p>
+        <ul class="list-inline banner-social-buttons">
+          <li>
+            <a href="https://twitter.com/" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+          </li>
+          <li>
+            <a href="https://facebook.com/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<%= link_to 'Login with Facebook', auth_path(provider: 'facebook') %>
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center copyright">
+      <p>Copyright &copy; Team UP 2015</p>
+    </div>
+  </footer>
 
-<%= link_to 'Login with Twitter', auth_path(provider: 'twitter') %>
+  <!-- jQuery -->
+  <!-- <script src="js/jquery.js"></script> -->
+
+  <!-- Bootstrap Core JavaScript -->
+  <!-- <script src="js/bootstrap.min.js"></script> -->
+
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="js/grayscale.js"></script>
+
+</body>

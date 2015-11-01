@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>BuddyUP.me</title>
+
+  <title>team UP</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Custom Fonts -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+
 </head>
+
+
+<!--  -->
 <body>
-    <% if current_user %>
-      <%= link_to 'logout', signout_path, method: :delete, data: { confirm: "Are you sure you want to log out?" } %>
-    <% end %>
 
     <%= yield %>
 

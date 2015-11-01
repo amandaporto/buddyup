@@ -1,6 +1,16 @@
 class UsersController < ApplicationController
   before_action :ensure_current_user
 
+  def show
 
-  #Show, edit, update
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
 end
