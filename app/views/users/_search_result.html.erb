@@ -1,0 +1,37 @@
+
+<% @users.map do |user| %>
+<!-- Content Row -->
+<div class="row search-result-list">
+
+  <!-- Profile Picture Column -->
+  <div class="col-md-3">
+    <img src="http://cdn.photoaffections.com/images/icon-profile.png" alt="Profile Picture" class="img-thumbnail">
+  </div>
+  
+  <!-- user information Column -->
+  <div class="col-md-3">
+    <ul class="profile-user">
+      <li>
+        <%= user.name %>
+      </li>
+      <li>
+        <i class="fa fa-map-marker"></i><%= user.address %>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Sports Column -->
+  <div class="col-md-3">
+    <h4>Sports</h4>
+    <p><i class="fa fa-futbol-o"></i>Soccer</p>
+    <p><i class="fa fa-bicycle"></i>Biking</p>
+  </div>
+  <!-- Skills Level Column -->
+  <div class="col-md-3">
+    <h4>Skill Level</h4>
+    <p><i class="fa fa-circle-o-notch"></i>Pro</p>
+    <p><i class="fa fa-circle-o-notch"></i>Pro</p>
+  </div>
+</div>
+<!-- /.row -->
+<% end %>

@@ -1,0 +1,41 @@
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <%= render 'navigation'%>
+
+  <!-- Search Results Section -->
+  <section id="search" class="container search-section">
+    <div class="row">
+
+      <!-- Search Results Column -->
+      <div class="col-lg-9">
+        <h4>Here is what we found for you:</h4>
+
+        <!-- Renders collection of individual user results -->
+        <%= render "search_result" %>
+      </div>
+
+      <!-- Criteria Column -->
+      <div class="col-lg-2 search-criteria">
+        <h4>Criteria</h4>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center copyright">
+      <p>Copyright &copy; Team UP 2015</p>
+    </div>
+  </footer>
+
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="js/grayscale.js"></script>
+
+</body>
