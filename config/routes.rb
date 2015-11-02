@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :activities
   resources :availabilities
   resources :skill_levels
-  resources :users
+  resources :users do
+    collection do
+      get :search
+    end
+  end
 
   # get "/pages" => "pages#index"
 

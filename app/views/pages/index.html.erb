@@ -30,9 +30,19 @@
             <a class="page-scroll" href="#contact">Contact </a>
           </li>
           <% if current_user %>
-            <li>
-              <%= link_to 'logout', signout_path, method: :delete, data: { confirm: "Nooo!! Don't go!! Sure you wanna leave?" } %>
-            </li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-default-solid dropdown-toggle page-scroll" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <i class="fa fa-user fa-fw"></i><%= current_user.name %>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><%= link_to 'my profile', user_path(current_user) %></li>
+                <li><%= link_to 'edit profile', edit_user_path(current_user) %></li>
+                <li><%= link_to 'invite friends', root_path %></li>
+                <li>
+                  <%= link_to 'logout', signout_path, method: :delete, data: { confirm: "Nooo!! Don't go!! Sure you wanna leave?" } %>
+                </li>
           <% end %>
         </ul>
       </div>
@@ -111,11 +121,6 @@
                     </div>
                   </div>
                 </li>
-
-                <!-- <li>
-                  <%= link_to 'Sign up', signup_path, class:"btn btn-default-solid btn-lg" %>
-                </li> -->
-
               </ul>
             </div>
           </div>
