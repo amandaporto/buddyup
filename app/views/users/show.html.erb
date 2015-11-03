@@ -38,29 +38,27 @@
 
     <!-- Content Row -->
     <div class="row content-section">
+
         <!-- Sports Column -->
         <div class="col-md-3 col-md-offset-2">
           <h3>Activities</h3>
-          <p><i class="fa fa-futbol-o"></i>Soccer</p>
-
-
-
-<!-- Need to loop through all found activities for @user -->
-<!-- Activity image needs to be included in database?? -->
-
-
-
-          <p><i class="fa fa-bicycle"></i>Biking</p>
+          <% current_activities = @user.activities.to_a %>
+          <% current_activities.map do |activity| %>
+            <p><i class="fa fa-futbol-o"></i><%= activity.sport %></p>
+          <% end %>
         </div>
+
         <!-- Skills Level Column -->
         <div class="col-md-2">
           <h3>Skill Level</h3>
-          <p><i class="fa fa-circle-o-notch"></i>Pro</p>
-          <p><i class="fa fa-circle-o-notch"></i>Pro</p>
+          <% current_activities.map do |activity| %>
+          <p><i class="fa fa-circle-o-notch"></i><%= activity.skill_level %></p>
+          <% end %>
         </div>
         <div class="col-md-1">
           <p></p>
         </div>
+
         <!-- Availability Column -->
         <div class="col-md-4 availability">
             <h3>Availability</h3>

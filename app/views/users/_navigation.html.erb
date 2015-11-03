@@ -22,10 +22,11 @@
         <li>
           <%= form_tag(search_users_path, :method => "get", class: "form-inline", id: "search-form") do %>
             <div class="form-group">
-              <%= select_tag :sport, options_from_collection_for_select(Activity.all, :name, :name), class:'form-control' %>
+              <% all_activities = Activity.sports.keys %>
+              <%= select_tag :sport, options_for_select(all_activities.sort), class:'form-control' %>
 
 
-<!-- REPLACE ACTIVITY.ALL, set in controller? show? index? where? anywhere? or in USER? -->
+<!-- REPLACE ACTIVITY.sports.keys, set in controller? show? index? where? anywhere? or in USER? -->
 
 
             </div>

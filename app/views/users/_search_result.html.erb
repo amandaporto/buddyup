@@ -7,7 +7,7 @@
   <div class="col-md-3">
     <img src="http://cdn.photoaffections.com/images/icon-profile.png" alt="Profile Picture" class="img-thumbnail">
   </div>
-  
+
   <!-- user information Column -->
   <div class="col-md-3">
     <ul class="profile-user">
@@ -20,18 +20,24 @@
     </ul>
   </div>
 
+  <%- # saves away the activities for the user once and reuse it below %>
+  <% current_activities = user.activities.to_a %>
+
   <!-- Sports Column -->
   <div class="col-md-3">
     <h4>Sports</h4>
-    <p><i class="fa fa-futbol-o"></i>Soccer</p>
-    <p><i class="fa fa-bicycle"></i>Biking</p>
+    <% current_activities.map do |activity| %>
+      <p><i class="icon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
+    <% end %>
   </div>
   <!-- Skills Level Column -->
   <div class="col-md-3">
     <h4>Skill Level</h4>
-    <p><i class="fa fa-circle-o-notch"></i>Pro</p>
-    <p><i class="fa fa-circle-o-notch"></i>Pro</p>
+    <% current_activities.map do |activity| %>
+    <p><i class="fa fa-circle-o-notch"></i><%= activity.skill_level %></p>
+    <% end %>
   </div>
 </div>
 <!-- /.row -->
 <% end %>
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>, <a href="http://www.flaticon.com/authors/yannick" title="Yannick">Yannick</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
