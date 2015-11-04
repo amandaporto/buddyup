@@ -16,7 +16,14 @@
     </header>
 
     <section id="profile" class=" profile-info">
-      <img src="http://cdn.photoaffections.com/images/icon-profile.png" alt="Profile Picture" class="img-thumbnail">
+
+      <!-- Profile Picture -->
+      <% if @user.image %>
+        <%= image_tag @user.image , class:"img-thumbnail"%>
+      <% else %>
+        <%= image_tag 'icon-profile.png' , class:"img-thumbnail"%>
+      <% end %>
+
 
       <!-- Edit profile or ask to team up button -->
       <% if current_user == @user %>
@@ -31,7 +38,7 @@
           <%= @user.name %>
         </li>
         <li>
-          <i class="fa fa-map-marker"></i><%= @user.address %>
+          <i class="fa fa-map-marker"></i><%= @user.zip %>
         </li>
       </ul>
     </section>

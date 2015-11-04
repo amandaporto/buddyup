@@ -12,7 +12,7 @@
         <h4>Here is what we found for you:</h4>
 
         <!-- Renders collection of individual user results -->
-        <% if @user %>
+        <% if @users.any? %>
           <%= render "search_result" %>
         <% else %>
           <p class="no-result"> Aww man! No one found. </p>

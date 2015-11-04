@@ -5,7 +5,12 @@
 
   <!-- Profile Picture Column -->
   <div class="col-md-3">
-    <img src="http://cdn.photoaffections.com/images/icon-profile.png" alt="Profile Picture" class="img-thumbnail">
+    <!-- Profile Picture -->
+    <% if user.image %>
+      <%= image_tag user.image , class:"img-thumbnail"%>
+    <% else %>
+      <%= image_tag 'icon-profile.png' , class:"img-thumbnail"%>
+    <% end %>
   </div>
 
   <!-- user information Column -->
@@ -15,7 +20,7 @@
         <%= user.name %>
       </li>
       <li>
-        <i class="fa fa-map-marker"></i><%= user.address %>
+        <i class="fa fa-map-marker"></i><%= user.zip %>
       </li>
     </ul>
   </div>
