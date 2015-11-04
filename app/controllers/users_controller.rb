@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def search
     @sport = params[:sport]
-    @users = User.with_sport(@sport)
+    @distance = params.fetch(:distance, 20)
+    @users = User.with_sport(@sport).near(current_user.gps_location, @distance)
   end
 end

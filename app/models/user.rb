@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
     User.joins(:activities).where("activities.sport": Activity.sports[sport])
   end
 
+  def gps_location
+    [self.latitude, self.longitude]
+  end
+  
   def self.from_omniauth(auth)
     user = where(provider: auth['provider'], uid: auth['uid']).first_or_create
 
