@@ -3,8 +3,7 @@ class User < ActiveRecord::Base
   has_many :availabilities
 
   def self.with_sport(sport)
-    # todo: once we how to link sports and users
-    User.all
+    User.joins(:activities).where("activities.sport": Activity.sports[sport])
   end
 
   def self.from_omniauth(auth)
