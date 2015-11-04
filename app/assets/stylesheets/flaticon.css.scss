@@ -1,0 +1,37 @@
+@font-face {
+	font-family: "Flaticon";
+	src: font_url("flaticon.eot");
+	src: font_url("flaticon.eot#iefix") format("embedded-opentype"),
+	font_url("flaticon.woff") format("woff"),
+	font_url("flaticon.ttf") format("truetype"),
+	font_url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+	font-family: Flaticon;
+  font-size: 20px;
+	font-style: normal;
+	margin-right: 10px;
+}.flaticon-baseball:before {
+	content: "\e000";
+}
+.flaticon-tennis:before {
+	content: "\e001";
+}
+.flaticon-basketball:before {
+	content: "\e002";
+}
+.flaticon-biking:before {
+	content: "\e003";
+}
+.flaticon-football:before {
+	content: "\e004";
+}
+.flaticon-soccer:before {
+	content: "\e005";
+}
+.flaticon-volleyball:before {
+	content: "\e006";
+}
