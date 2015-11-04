@@ -44,7 +44,7 @@
           <h3>Activities</h3>
           <% current_activities = @user.activities.to_a %>
           <% current_activities.map do |activity| %>
-            <p><i class="fa fa-futbol-o"></i><%= activity.sport %></p>
+            <p><i class="icon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
           <% end %>
         </div>
 
@@ -52,7 +52,7 @@
         <div class="col-md-2">
           <h3>Skill Level</h3>
           <% current_activities.map do |activity| %>
-          <p><i class="fa fa-circle-o-notch"></i><%= activity.skill_level %></p>
+          <p><%= activity.skill_level %><p>
           <% end %>
         </div>
         <div class="col-md-1">
