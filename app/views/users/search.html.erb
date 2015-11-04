@@ -12,7 +12,12 @@
         <h4>Here is what we found for you:</h4>
 
         <!-- Renders collection of individual user results -->
-        <%= render "search_result" %>
+        <% if @user %>
+          <%= render "search_result" %>
+        <% else %>
+          <p class="no-result"> Aww man! No one found. </p>
+        <% end %>
+
       </div>
 
       <!-- Criteria Column -->
