@@ -107,13 +107,13 @@ a:focus {
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
-    padding-top: 25px;
+    padding-top: 11px;
+    padding-bottom: 11px;
 }
 
 .navbar-custom .nav li a:hover {
     outline: 0;
-    color: rgba(89, 90, 91,.8);
-    background-color: transparent;
+    background-color: rgba(255, 184, 201,.5);
 }
 
 .navbar-custom .nav li a:focus,
