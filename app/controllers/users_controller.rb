@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   end
 
+
   def edit
     #make sure user found is current user
     @user = User.find(params[:id])
@@ -13,7 +14,6 @@ class UsersController < ApplicationController
       redirect_to root_path
       return
     end
-
   end
 
   def update
