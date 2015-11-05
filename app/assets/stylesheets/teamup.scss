@@ -346,11 +346,27 @@ a:focus {
     border: 1px solid #F10038;
     color: #fff;
     background-color: #F10038;
-    padding: 10px 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .btn-default-solid:hover,
 .btn-default-solid:focus {
+    border: 1px solid #F10038;
+    outline: 0;
+    color: #F10038;
+    background-color: #fff;
+}
+
+.btn-fixed-solid {
+    border: 1px solid #F10038;
+    color: #fff;
+    background-color: #F10038;
+    padding: 10px 40px;
+}
+
+.btn-fixed-solid:hover,
+.btn-fixed-solid:focus {
     border: 1px solid #F10038;
     outline: 0;
     color: #F10038;

@@ -14,8 +14,9 @@
   <div class="col-md-3">
     <h5>What is your Skill Level</h5>
     <% current_activities.map do |activity| %>
-    <p><%= activity.skill_level %><p>
+    <p><%= activity.skill_level %> <%= link_to '', :activity, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %><p>
     <% end %>
+
   </div>
 
   <!-- Availability Column -->
@@ -23,7 +24,7 @@
     <h5>When can you team up?</h5>
     <% current_availabilities = @user.availabilities.to_a %>
     <% current_availabilities.map do |availability| %>
-      <p><%= availability.day %><%= availability.time %></p>
+      <p><%= availability.day %><%= availability.time %><%= link_to '', :activity, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %></p>
     <% end %>
   </div>
 </div><!-- /.row -->
