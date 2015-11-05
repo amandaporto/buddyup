@@ -29,7 +29,7 @@
       <% if current_user == @user %>
         <%= link_to 'edit profile', edit_user_path(current_user), class:"btn btn-default-solid btn-lg" %>
       <% else %>
-        <%= mail_to "hello@wannateamup.com", "Ask to Team Up!", class:"btn btn-default-solid btn-lg" %>
+        <%= link_to "Ask to Team Up!", @user.email, class:"btn btn-default-solid btn-lg" %>
       <% end %>
 
       <!-- User information on profile -->
@@ -69,15 +69,10 @@
         <!-- Availability Column -->
         <div class="col-md-4 availability">
             <h3>Availability</h3>
-            <ul>
-              <li>Monday</li>
-              <li>Tuesday</li>
-              <li>Wednesday</li>
-              <li>Thursday</li>
-              <li>Friday</li>
-              <li>Saturday</li>
-              <li>Sunday</li>
-            </ul>
+            <% current_availabilities = @user.availabilities.to_a %>
+            <% current_availabilities.map do |availability| %>
+              <p><%= availability.day %><%= availability.time %></p>
+            <% end %>
         </div>
     </div>
     <!-- /.row -->

@@ -24,15 +24,18 @@
       <div class="col-lg-2 search-criteria">
         <h4>Criteria</h4>
         <p> Sports </p>
-        <% all_activities = Activity.sports.keys %>
-        <%= select_tag :sport, options_for_select(all_activities.sort), class:'form-control' %>
-        
-        <p> Distance </p>
-          <%= submit_tag("5 mi" ,name: "distance", class:'btn btn-default' )%>
-          <%= submit_tag("10 mi" ,name: "distance", class:'btn btn-default' )%>
-          <%= submit_tag("20 mi" ,name: "distance", class:'btn btn-default' )%>
-          <%= submit_tag("50 mi" ,name: "distance", class:'btn btn-default' )%>
-          <%= submit_tag("100 mi" ,name: "distance", class:'btn btn-default' )%>
+        <%= form_tag(search_users_path, :method => "get", class: "form-inline", id: "search-form") do %>
+
+          <% all_activities = Activity.sports.keys %>
+          <%= select_tag :sport, options_for_select(all_activities.sort), class:'form-control' %>
+
+          <p> Distance </p>
+            <%= submit_tag("5 mi" ,name: "distance", class:'btn btn-default' )%>
+            <%= submit_tag("10 mi" ,name: "distance", class:'btn btn-default' )%>
+            <%= submit_tag("20 mi" ,name: "distance", class:'btn btn-default' )%>
+            <%= submit_tag("50 mi" ,name: "distance", class:'btn btn-default' )%>
+            <%= submit_tag("100 mi" ,name: "distance", class:'btn btn-default' )%>
+        <% end %>
       </div>
 
     </div>
