@@ -19,27 +19,30 @@
     <div class="col-md-3">
       <ul class="profile-user">
         <li>
-          <%= user.name %>
+          <h4><%= user.name %></h4>
         </li>
         <li>
-          <i class="fa fa-map-marker"></i><%= user.zip %>
+          <p><i class="fa fa-map-marker"></i><span class="location"><%= user.zip %></span><p>
+        </li>
+        <li>
+          <p class="btn btn-default">Check 'em out</p>
         </li>
       </ul>
     </div>
 
     <%- # saves away the activities for the user once and reuse it below %>
-    <% current_activities = user.activities.to_a %>
+    <% current_activities = user.activities.last(2).to_a %>
 
     <!-- Sports Column -->
     <div class="col-md-3">
-      <h4>Sports</h4>
+      <h4 class="search-title">Sports</h4>
       <% current_activities.map do |activity| %>
         <p><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
       <% end %>
     </div>
     <!-- Skills Level Column -->
     <div class="col-md-3">
-      <h4>Skill Level</h4>
+      <h4 class="search-title">Skill Level</h4>
       <% current_activities.map do |activity| %>
       <p><%= activity.skill_level %><p>
       <% end %>

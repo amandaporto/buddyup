@@ -35,10 +35,10 @@
       <!-- User information on profile -->
       <ul class="profile-user">
         <li>
-          <%= @user.name %>
+          <h4><%= @user.name %></h4>
         </li>
         <li>
-          <i class="fa fa-map-marker"></i><%= @user.zip %>
+          <p><i class="fa fa-map-marker"></i><span class="location"><%= @user.zip %></span><p>
         </li>
       </ul>
     </section>
