@@ -1,47 +1,51 @@
 
 <% @users.map do |user| %>
 <!-- Content Row -->
-<div class="row search-result-list">
+<%= link_to user, class:"search-list-link" do %>
 
-  <!-- Profile Picture Column -->
-  <div class="col-md-3">
-    <!-- Profile Picture -->
-    <% if user.image %>
-      <%= image_tag user.image , class:"img-thumbnail"%>
-    <% else %>
-      <%= image_tag 'icon-profile.png' , class:"img-thumbnail"%>
-    <% end %>
-  </div>
+  <div class="row search-result-list">
 
-  <!-- user information Column -->
-  <div class="col-md-3">
-    <ul class="profile-user">
-      <li>
-        <%= user.name %>
-      </li>
-      <li>
-        <i class="fa fa-map-marker"></i><%= user.zip %>
-      </li>
-    </ul>
-  </div>
+    <!-- Profile Picture Column -->
+    <div class="col-md-3">
+      <!-- Profile Picture -->
+      <% if user.image %>
+        <%= image_tag user.image , class:"img-thumbnail"%>
+      <% else %>
+        <%= image_tag 'icon-profile.png' , class:"img-thumbnail"%>
+      <% end %>
+    </div>
 
-  <%- # saves away the activities for the user once and reuse it below %>
-  <% current_activities = user.activities.to_a %>
+    <!-- user information Column -->
+    <div class="col-md-3">
+      <ul class="profile-user">
+        <li>
+          <%= user.name %>
+        </li>
+        <li>
+          <i class="fa fa-map-marker"></i><%= user.zip %>
+        </li>
+      </ul>
+    </div>
 
-  <!-- Sports Column -->
-  <div class="col-md-3">
-    <h4>Sports</h4>
-    <% current_activities.map do |activity| %>
-      <p><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
-    <% end %>
+    <%- # saves away the activities for the user once and reuse it below %>
+    <% current_activities = user.activities.to_a %>
+
+    <!-- Sports Column -->
+    <div class="col-md-3">
+      <h4>Sports</h4>
+      <% current_activities.map do |activity| %>
+        <p><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
+      <% end %>
+    </div>
+    <!-- Skills Level Column -->
+    <div class="col-md-3">
+      <h4>Skill Level</h4>
+      <% current_activities.map do |activity| %>
+      <p><%= activity.skill_level %><p>
+      <% end %>
+    </div>
   </div>
-  <!-- Skills Level Column -->
-  <div class="col-md-3">
-    <h4>Skill Level</h4>
-    <% current_activities.map do |activity| %>
-    <p><%= activity.skill_level %><p>
-    <% end %>
-  </div>
-</div>
+<% end %>
+
 <!-- /.row -->
 <% end %>

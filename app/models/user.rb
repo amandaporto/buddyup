@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # validates :name, presence: true
+  # validates :zip, presence: true
+  # validates :email, presence: true
+
   has_many :activities
   has_many :availabilities
   geocoded_by :zip
@@ -12,11 +16,12 @@ class User < ActiveRecord::Base
   def gps_location
     [self.latitude, self.longitude]
   end
-  
+
   def self.from_omniauth(auth)
     user = where(provider: auth['provider'], uid: auth['uid']).first_or_create
 
     user.name         = auth.info.name
+    user.email         = auth.info.email
     user.nickname     = auth.info.nickname
     user.image        = auth.info.image
     user.access_token = auth.credentials.token

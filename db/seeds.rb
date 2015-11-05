@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-foo = User.create(name:"Foo Bar", zip:"Tampa, FL")
+foo = User.create(name:"Foo Bar", zip:"33701")
 foo.activities.create([sport: "Soccer", skill_level: "Beginner"])
 
-jason = User.create(name:"Jason Perry", zip:"St Pete, FL")
+jason = User.create(name:"Jason Perry", zip:"33701")
 jason.activities.create([sport: "Baseball", skill_level: "Professional"])
 
-gavin = User.create(name:"Gavin Startk", zip:"St Pete, FL")
+gavin = User.create(name:"Gavin Startk", zip:"33606")
 gavin.activities.create([sport: "Biking", skill_level: "Advanced"])

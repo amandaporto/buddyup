@@ -1,0 +1,86 @@
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <%= render 'navigation'%>
+
+  <%= form_for :users, url: edit_user_path , html:{class:"form-horizontal"} do |f| %>
+
+    <section id="profile-edit" class="profile-edit col-md-offset-2">
+      <!-- Profile Picture -->
+      <% if @user.image %>
+        <%= image_tag @user.image , class:"img-thumbnail"%>
+      <% else %>
+        <%= image_tag 'icon-profile.png' , class:"img-thumbnail"%>
+      <% end %>
+
+      <!-- Save button -->
+      <div>
+        <%= f.submit "Save Changes", class:"btn btn-default-solid" %>
+      </div>
+    </section>
+
+
+    <ul class="profile-user">
+      <li>
+        <div class="form-group">
+          <div class="col-sm-2">
+            <%= f.text_field :name , class:"form-control col-sm-8"%>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <div class="col-sm-2">
+            <i class="fa fa-map-marker"></i><%= f.text_field :zip , class:"form-control col-sm-8"%>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <!-- Content Row -->
+    <div class="row content-section">
+        <!-- Sports Column -->
+        <div class="col-md-3 col-md-offset-2">
+          <h3>Sports</h3>
+          <p><i class="fa fa-futbol-o"></i>Soccer</p>
+          <p><i class="fa fa-bicycle"></i>Biking</p>
+        </div>
+        <!-- Skills Level Column -->
+        <div class="col-md-2">
+          <h3>Skill Level</h3>
+          <p><i class="fa fa-circle-o-notch"></i>Pro</p>
+          <p><i class="fa fa-circle-o-notch"></i>Pro</p>
+        </div>
+        <div class="col-md-1">
+          <p></p>
+        </div>
+        <!-- Availability Column -->
+        <div class="col-md-4 availability">
+            <h3>Availability</h3>
+            <ul>
+              <li>Monday</li>
+              <li>Tuesday</li>
+              <li>Wednesday</li>
+              <li>Thursday</li>
+              <li>Friday</li>
+              <li>Saturday</li>
+              <li>Sunday</li>
+            </ul>
+        </div>
+    </div><!-- /.row -->
+
+    <% end %> <!-- /Form -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center copyright">
+      <p>Copyright &copy; Team UP 2015</p>
+    </div>
+  </footer>
+
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="js/grayscale.js"></script>
+
+</body>

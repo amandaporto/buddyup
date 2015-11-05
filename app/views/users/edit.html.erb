@@ -1,84 +1,103 @@
 
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
   <%= render 'navigation'%>
 
-    <!-- Intro Header -->
-    <header class="header">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="profile" class=" profile-info">
 
 
-<!-- USER IMAGE? Keep in database from Fb or Twitter? -->
 
+  <%= form_for @user , html:{class:"form-horizontal"} do |f| %>
 
-      <img src="http://cdn.photoaffections.com/images/icon-profile.png" alt="Profile Picture" class="img-thumbnail">
-      <a href="###########" class="btn btn-default-solid btn-lg">Save Changes</a>
-      <h1> EDIT PAGE!!!!!!!!</h1>
-      <ul class="profile-user">
-        <li>
-          <%= @user.name %>
-        </li>
-        <li>
-          <i class="fa fa-map-marker"></i><%= @user.zip %>
-        </li>
-      </ul>
-    </section>
+  <div class="row content-section">
+    <div class="col-md-2 col-md-offset-2">
 
-    <!-- Content Row -->
-    <div class="row content-section">
-        <!-- Sports Column -->
-        <div class="col-md-3 col-md-offset-2">
-          <h3>Sports</h3>
-          <p><i class="fa fa-futbol-o"></i>Soccer</p>
-          <p><i class="fa fa-bicycle"></i>Biking</p>
-        </div>
-        <!-- Skills Level Column -->
-        <div class="col-md-2">
-          <h3>Skill Level</h3>
-          <p><i class="fa fa-circle-o-notch"></i>Pro</p>
-          <p><i class="fa fa-circle-o-notch"></i>Pro</p>
-        </div>
-        <div class="col-md-1">
-          <p></p>
-        </div>
-        <!-- Availability Column -->
-        <div class="col-md-4 availability">
-            <h3>Availability</h3>
-            <ul>
-              <li>Monday</li>
-              <li>Tuesday</li>
-              <li>Wednesday</li>
-              <li>Thursday</li>
-              <li>Friday</li>
-              <li>Saturday</li>
-              <li>Sunday</li>
-            </ul>
-        </div>
+      <!-- Profile Picture -->
+      <% if @user.image %>
+        <%= image_tag @user.image , class:"img-thumbnail"%>
+      <% else %>
+        <%= image_tag 'icon-profile.png' , class:"img-thumbnail"%>
+      <% end %>
+
+      <!-- Save button -->
+      <div>
+        <%= f.submit "Save Changes", class:"btn btn-default-solid" %>
+      </div>
     </div>
-    <!-- /.row -->
 
+    <!-- Personal Information  -->
+    <div class="col-md-4">
+      <h3> Edit your profile </h3>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container text-center copyright">
-      <p>Copyright &copy; Team UP 2015</p>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
+          <div class="col-sm-9">
+            <%= f.text_field :name , class:"form-control", :placeholder => 'Name' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Zip Code</label>
+          <div class="col-sm-9">
+            <%= f.text_field :zip , class:"form-control", :placeholder => 'Zip Code' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Email</label>
+          <div class="col-sm-9">
+            <%= f.text_field :email , class:"form-control", :placeholder => 'Email' %>
+          </div>
+        </div>
+      </form>
+
     </div>
-  </footer>
+  </div>
+  <% end %> <!-- /Form -->
 
-  <!-- Plugin JavaScript -->
-  <script src="js/jquery.easing.min.js"></script>
 
-  <!-- Custom Theme JavaScript -->
-  <script src="js/grayscale.js"></script>
+  <!-- Content Row -->
+  <div class="row">
+      <!-- Sports Column -->
+      <div class="col-md-3 col-md-offset-2">
+        <h5>Tell us what you enjoy doing!</h5>
+        <p><i class="fa fa-futbol-o"></i>Soccer</p>
+        <p><i class="fa fa-bicycle"></i>Biking</p>
+      </div>
+      <!-- Skills Level Column -->
+      <div class="col-md-3">
+        <h5>What is your Skill Level</h5>
+        <p><i class="fa fa-circle-o-notch"></i>Pro</p>
+        <p><i class="fa fa-circle-o-notch"></i>Pro</p>
+      </div>
+      <!-- Availability Column -->
+      <div class="col-md-4 availability">
+          <h5>When can you team up?</h5>
+          <ul>
+            <li>Monday</li>
+            <li>Tuesday</li>
+            <li>Wednesday</li>
+            <li>Thursday</li>
+            <li>Friday</li>
+            <li>Saturday</li>
+            <li>Sunday</li>
+          </ul>
+      </div>
+  </div><!-- /.row -->
+
+
+<!-- Footer -->
+<footer>
+  <div class="container text-center copyright">
+    <p>Copyright &copy; Team UP 2015</p>
+  </div>
+</footer>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/grayscale.js"></script>
 
 </body>
