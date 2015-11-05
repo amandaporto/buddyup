@@ -5,7 +5,7 @@
   <div class="col-md-3 col-md-offset-2">
     <h5>Tell us what you enjoy doing!</h5>
     <% current_activities = @user.activities.to_a %>
-    <% current_activities.map do |activity| %>
+    <% current_activities.each do |activity| %>
       <p><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
     <% end %>
   </div>
@@ -13,8 +13,8 @@
   <!-- Skills Level Column -->
   <div class="col-md-3">
     <h5>What is your Skill Level</h5>
-    <% current_activities.map do |activity| %>
-    <p><%= activity.skill_level %> <%= link_to '', :activity, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %><p>
+    <% current_activities.each do |activity| %>
+    <p><%= activity.skill_level %> <%= link_to '', activity, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %><p>
     <% end %>
 
   </div>
@@ -23,8 +23,8 @@
   <div class="col-md-4 availability">
     <h5>When can you team up?</h5>
     <% current_availabilities = @user.availabilities.to_a %>
-    <% current_availabilities.map do |availability| %>
-      <p><%= availability.day %><%= availability.time %><%= link_to '', :activity, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %></p>
+    <% current_availabilities.each do |availability| %>
+      <p><%= availability.day %><%= availability.time %><%= link_to '', availability, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %></p>
     <% end %>
   </div>
 </div><!-- /.row -->

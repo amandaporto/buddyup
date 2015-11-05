@@ -7,6 +7,12 @@ class AvailabilitiesController < ApplicationController
     redirect_to edit_user_path(current_user)
   end
 
+  def destroy
+    current_user.availabilities.find(params[:id]).destroy
+
+    redirect_to edit_user_path(current_user)
+
+  end
 
   private
 
