@@ -44,7 +44,7 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
               <li><%= link_to 'my profile', user_path(current_user) %></li>
               <li><%= link_to 'edit profile', edit_user_path(current_user) %></li>
-              <li><%= link_to 'invite friends', root_path %></li>
+              <!-- <li><%= link_to 'invite friends', root_path %></li> -->
               <li>
                 <%= link_to 'logout', signout_path, method: :delete, data: { confirm: "Nooo!! Don't go!! Sure you wanna leave?" } %>
               </li>

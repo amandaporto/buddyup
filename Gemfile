@@ -16,8 +16,10 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
 
-#Geo location
+#Geo location and maps
 gem 'geocoder'
+gem 'gmaps4rails'
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
