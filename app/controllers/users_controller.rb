@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def search
     @sport = params[:sport]
     @distance = params.fetch(:distance, 20)
-    @users = User.with_sport(@sport).near(current_user.gps_location, @distance)
+    @users = User.with_sport(@sport).where("user_id <> ?", current_user.id).near(current_user.gps_location, @distance)
 
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
       marker.lat user.latitude

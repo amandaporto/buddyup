@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-
-
   protected
 
     def ensure_current_user
@@ -26,7 +24,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user  #Sets the helper meethod to be used in views
 
     def clear_current_user!
-      reset_session 
+      reset_session
     end
 
 end
