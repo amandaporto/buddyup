@@ -3,10 +3,16 @@ class UsersController < ApplicationController
 
   def show_profile
     @user = current_user
+
+    render :show
   end
 
   def edit_profile
     @user = current_user
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   def update

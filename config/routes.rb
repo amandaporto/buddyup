@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :activities
   resources :availabilities
   resources :skill_levels
-  resources :users, except: [:edit, :show] do
+  resources :users, except: [:edit] do
     collection do
       get :show_profile
       get :edit_profile
