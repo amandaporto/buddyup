@@ -11,38 +11,38 @@
     <!-- Add Sport Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">What else do you enjoy doing?</h4>
-          </div>
-          <div class="modal-body">
-            <%= form_for Activity.new(user: @user) , html:{class:"form-horizontal"} do |activity_form| %>
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-4 control-label">Activity</label>
-                <div class="col-sm-5">
-                  <% all_activities = Activity.sports.keys %>
-                  <%= activity_form.select :sport, options_for_select(all_activities.sort), class:'form-control' %>
-<!-- REPLACE ACTIVITY.sports.keys, set in controller? show? index? where? anywhere? or in USER? -->
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-4 control-label">Skill Level</label>
-                <div class="col-sm-5">
-                  <% all_skills = Activity.skill_levels.keys %>
-                  <%= activity_form.select :skill_level, options_for_select(all_skills), class:'form-control' %>
-<!-- REPLACE ACTIVITY.sports.keys, set in controller? show? index? where? anywhere? or in USER? -->
-                </div>
-              </div>
-
+        <%= form_for Activity.new(user: @user) , html:{class:"form-horizontal"} do |activity_form| %>
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">What else do you enjoy doing?</h4>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <%= activity_form.submit "Save Changes", class:"btn btn-default" %>
+            <div class="modal-body">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-4 control-label">Activity</label>
+                  <div class="col-sm-5">
+                    <% all_activities = Activity.sports.keys %>
+                    <%= activity_form.select :sport, options_for_select(all_activities.sort), class:'form-control' %>
+  <!-- REPLACE ACTIVITY.sports.keys, set in controller? show? index? where? anywhere? or in USER? -->
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-4 control-label">Skill Level</label>
+                  <div class="col-sm-5">
+                    <% all_skills = Activity.skill_levels.keys %>
+                    <%= activity_form.select :skill_level, options_for_select(all_skills), class:'form-control' %>
+  <!-- REPLACE ACTIVITY.sports.keys, set in controller? show? index? where? anywhere? or in USER? -->
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <%= activity_form.submit "Save Changes", class:"btn btn-default" %>
+              </div>
             </div>
-          </div>
           <% end %><!-- End of form  -->
         </div>
       </div>

@@ -2,7 +2,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-custom navbar-fixed-top index-nav" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -37,8 +37,8 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><%= link_to 'my profile', user_path(current_user) %></li>
-                <li><%= link_to 'edit profile', edit_user_path(current_user) %></li>
+                <li><%= link_to 'my profile', show_profile_users_path %></li>
+                <li><%= link_to 'edit profile', edit_profile_users_path %></li>
                 <li><%= link_to 'invite friends', root_path %></li>
                 <li>
                   <%= link_to 'logout', signout_path, method: :delete, data: { confirm: "Nooo!! Don't go!! Sure you wanna leave?" } %>
