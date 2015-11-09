@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105201326) do
+ActiveRecord::Schema.define(version: 20151109190517) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "created_at",              null: false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20151105201326) do
     t.float    "longitude"
     t.binary   "image"
     t.string   "email"
+    t.string   "city"
+    t.string   "state"
   end
 
 end
