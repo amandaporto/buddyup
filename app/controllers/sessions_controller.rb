@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     self.current_user = User.from_omniauth(request.env['omniauth.auth'])
 
     if current_user
-      redirect_to user_path(current_user)
+      redirect_to show_profile_users_path
     else
       redirect_to root_path, alert: "We dont know what happened!! Try again?"
     end

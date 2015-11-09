@@ -1,27 +1,20 @@
 class UsersController < ApplicationController
   before_action :ensure_current_user
 
-  def show
-    @user = User.find(params[:id])
-
+  def show_profile
+    @user = current_user
   end
 
-
-  def edit
-    #make sure user found is current user
-    @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to root_path
-      return
-    end
+  def edit_profile
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update_attributes(user_params)
-      redirect_to user_path
+      redirect_to show_profile_users_path
     else
-     redirect_to edit_user_path
+      redirect_to edit_profile_users_path
     end
   end
 
@@ -29,6 +22,12 @@ class UsersController < ApplicationController
     @sport = params[:sport]
     @distance = params.fetch(:distance, 20)
     @users = User.with_sport(@sport).near(current_user.gps_location, @distance)
+
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      marker.infowindow user.name
+    end
   end
 
 

@@ -4,14 +4,13 @@ class AvailabilitiesController < ApplicationController
   def create
     current_user.availabilities.create(availability_params)
 
-    redirect_to edit_user_path(current_user)
+    redirect_to edit_profile_users_path
   end
 
   def destroy
     current_user.availabilities.find(params[:id]).destroy
 
-    redirect_to edit_user_path(current_user)
-
+    redirect_to edit_profile_users_path
   end
 
   private

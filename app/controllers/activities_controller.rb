@@ -4,13 +4,13 @@ class ActivitiesController < ApplicationController
   def create
     current_user.activities.create(activity_params)
 
-    redirect_to edit_user_path(current_user)
+    redirect_to edit_profile_users_path
   end
 
   def destroy
     current_user.activities.find(params[:id]).destroy
 
-    redirect_to edit_user_path(current_user)
+    redirect_to edit_profile_users_path
   end
 
   private
