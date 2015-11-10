@@ -483,6 +483,13 @@ body {
   transition: width 1s, height 1s;
 }
 
+@media (max-width: 500px){
+  .navbar-brand img {
+    width: $brand-logo-image-width * 1.2;
+    transition: width 1s, height 1s;
+  }
+}
+
 .top-nav-collapse .navbar-brand img {
   width: $brand-logo-image-width;
   transition: width 1s, height 1s;
