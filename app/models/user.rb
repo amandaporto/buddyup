@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   end
 
   def self.with_sport(sport)
-    User.joins(:activities).where("activities.sport": Activity.sports[sport])
+    User.joins(:activities).where("activities.sport" => Activity.sports[sport])
   end
 
   def profile_complete?
