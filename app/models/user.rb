@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
-  # validates :name, presence: true
-  # validates :zip, presence: true
-  # validates :email, presence: true
+  validates :name, presence: true
+  validates :street, presence: true
+  validates :zip, presence: true
+  validates :email, presence: true
 
   has_many :activities
   has_many :availabilities
-  geocoded_by :zip
+  geocoded_by :street_and_zip
 
   after_validation :geocode_the_user
 
@@ -15,6 +16,10 @@ class User < ActiveRecord::Base
       user.city  = geo.city
       user.state = geo.state_code
     end
+  end
+
+  def street_and_zip
+    "#{street}, #{zip}"
   end
 
   def geocode_the_user
