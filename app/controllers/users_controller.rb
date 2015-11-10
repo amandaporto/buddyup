@@ -34,8 +34,9 @@ class UsersController < ApplicationController
       marker.lng user.longitude
       marker.infowindow render_to_string(partial: "infowindow", locals: {user: user})
     end
-  end
 
+    response.headers["Content-Type"] = 'text/javascript' if request.xhr?
+  end
 
   private
 
