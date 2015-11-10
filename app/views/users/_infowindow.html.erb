@@ -1,0 +1,16 @@
+<%= link_to user do %>
+  <!-- Profile Picture -->
+  <% if user.image %>
+    <%= image_tag user.image , size: "100x100", class:"user-thumbnail"%>
+  <% else %>
+    <%= image_tag 'icon-profile.png' , class:"img-thumbnail"%>
+  <% end %>
+  <ul class="profile-user">
+    <li>
+      <h4><%= user.name %></h4>
+    </li>
+    <li>
+      <p><i class="fa fa-map-marker"></i><span class="location"><%= user.city %>, <%= user.state %></span><p>
+    </li>
+  </ul>
+<% end %>

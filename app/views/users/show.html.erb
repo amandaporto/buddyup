@@ -20,7 +20,7 @@
         <div class="profile-info">
           <!-- Profile Picture -->
           <% if @user.image %>
-            <%= image_tag @user.image , class:"img-thumbnail img-profile"%>
+            <%= image_tag @user.image , size: "250x250", class:"user-thumbnail img-profile"%>
           <% else %>
             <%= image_tag 'icon-profile.png' , class:"img-thumbnail img-profile"%>
           <% end %>
