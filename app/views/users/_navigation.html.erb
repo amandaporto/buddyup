@@ -19,11 +19,13 @@
         </li>
 
         <!-- Search -->
-        <li>
+        <li class="search-nav">
           <%= form_tag(search_users_path, :method => "get", class: "form-inline", id: "search-form") do %>
+           Choose a sport <span class="glyphicon glyphicon-menu-right"></span><span class="glyphicon glyphicon-menu-right"></span>
+
             <div class="form-group">
               <% all_activities = Activity.sports.keys %>
-              <%= select_tag :sport, options_for_select(all_activities.sort), class:'form-control' %>
+              <%= select_tag :sport, options_for_select(all_activities.sort), class:'form-control btn' %>
 
 
 <!-- REPLACE ACTIVITY.sports.keys, set in controller? show? index? where? anywhere? or in USER? -->
@@ -37,7 +39,7 @@
         <!-- Dropdown -->
         <li>
           <div class="dropdown">
-            <button class="btn btn-fixed-solid dropdown-toggle page-scroll" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default-solid dropdown-toggle page-scroll" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               <i class="fa fa-user fa-fw"></i><%= current_user.name %>
               <span class="caret"></span>
             </button>

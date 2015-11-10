@@ -16,12 +16,16 @@
   </div>
 
   <!-- Skills Level Column -->
-  <div class="col-md-3">
+  <div class="col-md-3 edit-skill">
     <h5>What is your Skill Level</h5>
 
     <% if current_activities.any? %>
       <% current_activities.each do |activity| %>
-      <p><%= activity.skill_level %> <%= link_to '', activity, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %><p>
+      <div>
+        <p><%= activity.skill_level %>
+        <%= link_to '', activity, method: :delete, class: "glyphicon glyphicon-remove pull-right", data: { confirm: 'Are you sure?' } %>
+        </p>
+      </div>
       <% end %>
     <% else %>
       <p class="text-muted"> i.e. Beginner </p>
@@ -29,13 +33,17 @@
   </div>
 
   <!-- Availability Column -->
-  <div class="col-md-4 availability">
+  <div class="col-md-3 availability">
     <h5>When can you team up</h5>
     <% current_availabilities = @user.availabilities.to_a %>
 
     <% if current_availabilities.any? %>
       <% current_availabilities.each do |availability| %>
-        <p><%= availability.day %> -<%= availability.time %><%= link_to '', availability, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %></p>
+        <div>
+          <p class="availability-list"><%= availability.day %> - <%= availability.time %>
+            <%= link_to '', availability, method: :delete, class: "glyphicon glyphicon-remove pull-right", data: { confirm: 'Are you sure?' } %>
+          </p>
+        </div>
       <% end %>
     <% else %>
       <p class="text-muted"> i.e. Mon - Mornings </p>

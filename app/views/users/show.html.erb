@@ -31,7 +31,7 @@
           <% if current_user == @user %>
             <%= link_to 'edit profile', edit_profile_users_path, class:"btn btn-default-solid btn-lg" %>
           <% else %>
-            <%= link_to "Ask to Team Up!", @user.email, class:"btn btn-default-solid btn-lg" %>
+            <%= mail_to @user.email, "Ask to Team Up!", subject: "Let's TEAM UP request!", body:"Hey #{@user.name}, Saw your profile and was wondering... wanna team up?", class:"btn btn-default-solid btn-lg" %>
           <% end %>
 
           <!-- User information on profile -->
@@ -52,12 +52,12 @@
 
         <!-- Sports Column -->
         <div class="col-md-3 col-md-offset-2">
-          <h4>Activities</h3>
+          <h3>Activities</h3>
           <% current_activities = @user.activities.to_a %>
 
           <% if current_activities.any? %>
             <% current_activities.each do |activity| %>
-              <p><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
+              <p class="sports-list"><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
             <% end %>
           <% else %>
             <p class="text-muted"> No sports added yet </p>
@@ -70,7 +70,7 @@
 
           <% if current_activities.any? %>
             <% current_activities.each do |activity| %>
-            <p><%= activity.skill_level %> <%= link_to '', activity, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %><p>
+            <p class="sports-list"><%= activity.skill_level %></p>
             <% end %>
           <% else %>
             <p class="text-muted"> ..or skill level </p>
@@ -87,7 +87,7 @@
 
             <% if current_availabilities.any? %>
               <% current_availabilities.each do |availability| %>
-                <p><%= availability.day %> -<%= availability.time %><%= link_to '', availability, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %></p>
+              <p class="availability-list"><%= availability.day %> - <%= availability.time %>
               <% end %>
             <% else %>
               <p class="text-muted"> Too busy.. or lazy </p>

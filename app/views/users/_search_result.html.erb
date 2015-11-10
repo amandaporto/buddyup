@@ -37,14 +37,14 @@
     <div class="col-md-3">
       <h4 class="search-title">Sports</h4>
       <% current_activities.map do |activity| %>
-        <p><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
+        <p class="sports-list"><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
       <% end %>
     </div>
     <!-- Skills Level Column -->
     <div class="col-md-3">
       <h4 class="search-title">Skill Level</h4>
       <% current_activities.map do |activity| %>
-      <p><%= activity.skill_level %><p>
+      <p class="sports-list"><%= activity.skill_level %></p>
       <% end %>
     </div>
   </div>

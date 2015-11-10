@@ -13,8 +13,7 @@
 
       <!-- Search Results Column -->
       <div class="col-lg-9">
-        <h4>Here is what we found for you:</h4>
-        <%= link_to 'list ', "#", id: "show-list" %><%= link_to '| map', "#", id: "show-map" %>
+        <h4>Find someone to team up with:</h4>
 
         <!-- Renders collection of individual user results -->
         <% if @users.any? %>
@@ -22,21 +21,23 @@
             <%= render "search_result" %>
           </div>
         <% else %>
-          <p class="no-result"> Aww man! No one found. </p>
+          <p class="no-result text-muted"> Aww man! No one found. </p>
         <% end %>
         <div id="map"></div>
       </div>
 
       <!-- Criteria Column -->
-      <div class="col-lg-2 search-criteria">
+      <div class="col-lg-3 search-criteria">
         <h4>Criteria</h4>
-        <p> Sports </p>
+        <%= link_to 'list view ', "#", id: "show-list", class:"btn btn-default" %><%= link_to ' map view', "#", id: "show-map", class:"btn btn-default" %>
+
+        <h6> Sports </h6>
         <%= form_tag(search_users_path, :method => "get", class: "form-inline", id: "search-form", remote: true) do %>
 
           <% all_activities = Activity.sports.keys %>
           <%= select_tag :sport, options_for_select(all_activities.sort), class:'form-control' %>
 
-          <p> Distance </p>
+          <h6> Distance </h6>
             <%= submit_tag("5 mi" ,name: "distance", class:'btn btn-default' )%>
             <%= submit_tag("10 mi" ,name: "distance", class:'btn btn-default' )%>
             <%= submit_tag("20 mi" ,name: "distance", class:'btn btn-default' )%>
