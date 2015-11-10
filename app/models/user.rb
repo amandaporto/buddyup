@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
     user.nickname     = auth.info.nickname
     user.image        = auth.info.image
     user.access_token = auth.credentials.token
-    user.save!
+    user.save!(validate: false)
 
     return user
   end
