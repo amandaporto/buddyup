@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20151109190517) do
     t.datetime "updated_at",   null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.binary   "image"
+    t.string   "image"
     t.string   "email"
     t.string   "city"
     t.string   "state"
