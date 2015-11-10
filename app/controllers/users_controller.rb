@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       redirect_to show_profile_users_path
     else
-      redirect_to edit_profile_users_path
+      render :edit_profile
     end
   end
 
@@ -40,6 +40,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :zip, :email)
+    params.require(:user).permit(:name, :zip, :street, :email)
   end
 end
