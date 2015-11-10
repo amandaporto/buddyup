@@ -4,6 +4,8 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+$brand-logo-image-width: 90px;
+
 body {
     width: 100%;
     height: 100%;
@@ -80,10 +82,6 @@ a:focus {
 
 .navbar-brand {
   padding: 0;
-}
-
-.navbar-custom .navbar-brand img {
-    width: 90px;
 }
 
 .navbar-custom .navbar-brand:focus {
@@ -188,7 +186,7 @@ a:focus {
 }
 
 .intro .intro-body .brand-heading {
-    font-size: 40px;
+    font-size: 100px;
 }
 
 .intro .intro-body .intro-text {
@@ -213,7 +211,7 @@ a:focus {
     }
 
     .intro .intro-body .brand-heading {
-        font-size: 150px;
+        font-size: 130px;
     }
 
     .intro .intro-body .intro-text {
@@ -478,4 +476,14 @@ body {
   .form-inline .form-control {
     width: 150px;
   }
+}
+
+.navbar-brand img {
+  width: $brand-logo-image-width * 1.7;
+  transition: width 1s, height 1s;
+}
+
+.top-nav-collapse .navbar-brand img {
+  width: $brand-logo-image-width;
+  transition: width 1s, height 1s;
 }

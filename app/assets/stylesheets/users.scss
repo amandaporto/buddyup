@@ -52,10 +52,16 @@
   margin-bottom: 10px;
 }
 
-.img-thumbnail {
-  width: 175px;
-  height: 175px;
-  max-width: none;
+.user-thumbnail {
+  object-fit: cover;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
 }
 
 .img-profile {
