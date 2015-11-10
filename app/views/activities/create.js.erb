@@ -1,2 +1,5 @@
-$('#show-sport-skill').html("<%= escape_javascript(render "show_sport_skill")%>");
+<% if @activity.valid? %>
+  $('#show-sport-skill').html("<%= escape_javascript(render "show_sport_skill")%>");
+<% end %>
+
 $('#myModal').modal('hide')

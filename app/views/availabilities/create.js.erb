@@ -1,2 +1,4 @@
-$('#show-availability').html("<%= escape_javascript(render "show_availability")%>");
+<% if @activity.valid? %>
+  $('#show-availability').html("<%= escape_javascript(render "show_availability")%>");
+<% end %>
 $('#myModal1').modal('hide')
