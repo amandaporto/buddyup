@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     collection do
       get :show_profile
       get :edit_profile
-      get :search
+      post :search
     end
   end
 
