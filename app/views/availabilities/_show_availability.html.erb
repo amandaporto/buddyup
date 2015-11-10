@@ -1,0 +1,14 @@
+<h5>When can you team up</h5>
+<% current_availabilities = @user.availabilities.order("day asc").to_a %>
+
+<% if current_availabilities.any? %>
+  <% current_availabilities.each do |availability| %>
+    <div>
+      <p class="availability-list"><%= availability.day %> - <%= availability.time %>
+        <%= link_to '', availability, method: :delete, class: "glyphicon glyphicon-remove pull-right", data: { confirm: 'Are you sure?' } %>
+      </p>
+    </div>
+  <% end %>
+<% else %>
+  <p class="text-muted"> i.e. Mon - Mornings </p>
+<% end %>

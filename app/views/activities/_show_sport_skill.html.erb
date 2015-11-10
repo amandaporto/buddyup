@@ -1,0 +1,30 @@
+<!-- Sports Column -->
+<div class="col-md-3 col-md-offset-2">
+  <h5>What do you enjoy doing</h5>
+  <% current_activities = @user.activities.to_a %>
+
+  <% if current_activities.any? %>
+    <% current_activities.each do |activity| %>
+      <p><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
+    <% end %>
+  <% else %>
+    <p class="text-muted"> i.e. Volleyball </p>
+  <% end %>
+</div>
+
+<!-- Skills Level Column -->
+<div class="col-md-3 edit-skill">
+  <h5>What is your Skill Level</h5>
+
+  <% if current_activities.any? %>
+    <% current_activities.each do |activity| %>
+    <div>
+      <p><%= activity.skill_level %>
+      <%= link_to '', activity, method: :delete, class: "glyphicon glyphicon-remove pull-right", data: { confirm: 'Are you sure?' } %>
+      </p>
+    </div>
+    <% end %>
+  <% else %>
+    <p class="text-muted"> i.e. Beginner </p>
+  <% end %>
+</div>

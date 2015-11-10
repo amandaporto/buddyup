@@ -1,52 +1,14 @@
 <!-- Content Row -->
 <div class="row margin-bottom">
 
-  <!-- Sports Column -->
-  <div class="col-md-3 col-md-offset-2">
-    <h5>What do you enjoy doing</h5>
-    <% current_activities = @user.activities.to_a %>
-
-    <% if current_activities.any? %>
-      <% current_activities.each do |activity| %>
-        <p><i class="flaticon-<%= activity.sport.downcase %>"></i><%= activity.sport %></p>
-      <% end %>
-    <% else %>
-      <p class="text-muted"> i.e. Volleyball </p>
-    <% end %>
-  </div>
-
-  <!-- Skills Level Column -->
-  <div class="col-md-3 edit-skill">
-    <h5>What is your Skill Level</h5>
-
-    <% if current_activities.any? %>
-      <% current_activities.each do |activity| %>
-      <div>
-        <p><%= activity.skill_level %>
-        <%= link_to '', activity, method: :delete, class: "glyphicon glyphicon-remove pull-right", data: { confirm: 'Are you sure?' } %>
-        </p>
-      </div>
-      <% end %>
-    <% else %>
-      <p class="text-muted"> i.e. Beginner </p>
-    <% end %>
+  <!-- Sport and skills Column -->
+  <div id="show-sport-skill">
+    <%= render 'activities/show_sport_skill'%>
   </div>
 
   <!-- Availability Column -->
-  <div class="col-md-3 availability">
-    <h5>When can you team up</h5>
-    <% current_availabilities = @user.availabilities.order("day asc").to_a %>
-
-    <% if current_availabilities.any? %>
-      <% current_availabilities.each do |availability| %>
-        <div>
-          <p class="availability-list"><%= availability.day %> - <%= availability.time %>
-            <%= link_to '', availability, method: :delete, class: "glyphicon glyphicon-remove pull-right", data: { confirm: 'Are you sure?' } %>
-          </p>
-        </div>
-      <% end %>
-    <% else %>
-      <p class="text-muted"> i.e. Mon - Mornings </p>
-    <% end %>
+  <div id="show-availability" class="col-md-3 availability">
+    <%= render 'availabilities/show_availability'%>
   </div>
+
 </div><!-- /.row -->
