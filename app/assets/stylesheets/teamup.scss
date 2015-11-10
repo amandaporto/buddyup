@@ -309,7 +309,7 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 200px;
+        padding-top: 150px;
     }
 
     .about-section {
@@ -444,4 +444,21 @@ body {
   label {
     width: auto; display:inline;
   }
+}
+
+.edit-message {
+  margin-top: 100px;
+}
+
+.edit-profile-text {
+  margin-bottom: 45px;
+  margin-top: 15px;
+}
+
+.text-muted {
+  color: #ccc;
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
 }
