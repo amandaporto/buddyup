@@ -34,6 +34,12 @@
   margin-bottom: 10px;
 }
 
+@media(max-width:500px) {
+  .profile-info {
+    margin-top: 20px;
+  }
+}
+
 .profile-user {
   list-style: none;
   padding-top: 20px;
@@ -73,6 +79,27 @@
 .availability {
   border-left: solid 1px #d3d3d3;
   padding-left: 50px;
+}
+
+@media (max-width: 500px){
+  .availability {
+    border-left: none;
+    padding-left: 30px;
+  }
+
+  .edit-skill {
+    padding-left: 30px;
+    padding-right: 10px;
+  }
+
+  .edit-sport {
+    padding-left: 30px;
+  }
+
+  .edit-button {
+    margin-top: 10px;
+    margin-left: 70px;
+  }
 }
 
 .search-section {
@@ -142,4 +169,29 @@
 .criteria-submit {
   margin-bottom: 3px;
   width: 70px;
+}
+
+.user_landing {
+  background-image: image-url("volleyball_opacity.png");
+  background-size: cover;
+  opacity: .8;
+  height: 100%;
+  width: 95%;
+  background-position: top;
+}
+
+.landing-message {
+  color: #F10038;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 1px 1px 10px #fff;}
+
+.no-result.landing-message {
+  min-height: 400px;
+}
+
+@media (max-width: 500px){
+  .no-result.landing-message {
+    min-height: 200px;
+  }
 }
