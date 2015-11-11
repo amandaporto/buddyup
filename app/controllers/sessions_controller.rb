@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
     if current_user
       if current_user.profile_complete?
-        redirect_to show_profile_users_path
+        redirect_to user_landing_users_path
       else
         redirect_to edit_profile_users_path
       end
