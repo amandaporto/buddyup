@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :ensure_current_user
 
+  def user_landing
+    @user = current_user
+  end
+
   def show_profile
     @user = current_user
 

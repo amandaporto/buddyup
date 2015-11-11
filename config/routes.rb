@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :skill_levels
   resources :users, except: [:edit] do
     collection do
+      get :user_landing
       get :show_profile
       get :edit_profile
       post :search
