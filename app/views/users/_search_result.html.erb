@@ -1,4 +1,8 @@
 
+<% if @users.empty? %>
+<p class="no-result text-muted"> Aww man! No one found. </p>
+<% end %>
+
 <% @users.map do |user| %>
 <!-- Content Row -->
 <%= link_to user, class:"search-list-link" do %>

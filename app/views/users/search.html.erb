@@ -16,13 +16,9 @@
         <h4>Find someone to team up with:</h4>
 
         <!-- Renders collection of individual user results -->
-        <% if @users.any? %>
-          <div id='search-results'>
-            <%= render "search_result" %>
-          </div>
-        <% else %>
-          <p class="no-result text-muted"> Aww man! No one found. </p>
-        <% end %>
+        <div id='search-results'>
+          <%= render "search_result" %>
+        </div>
         <div id="map"></div>
       </div>
 

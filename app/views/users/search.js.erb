@@ -1,4 +1,4 @@
-$('#search-results').html("<%= escape_javascript(render "search_result") %>");
+$('#search-results').html("<%= escape_javascript(render "search_result") %>").removeClass("user_landing");
 
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
