@@ -498,3 +498,16 @@ body {
   width: $brand-logo-image-width;
   transition: width 1s, height 1s;
 }
+
+.brand-message {
+  text-align: center;
+}
+
+.brand-message h4 {
+  background: rgba(255,255,255,.4);
+  width: 60%;
+  padding: 10px 0;
+  margin: -90px auto 100px auto;
+  text-shadow: 2px 2px 2px #fff;
+
+}
