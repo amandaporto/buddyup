@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(user_params)
-      redirect_to show_profile_users_path
+      redirect_to user_landing_users_path
     else
       render :edit_profile
     end
