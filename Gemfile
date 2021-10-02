@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '2.6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.8'
+# gem 'json', '1.8'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -11,10 +12,10 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 4.4.0'
 
 # Authorization
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'dotenv-rails'
+gem 'omniauth', '1.2.2'
+gem 'omniauth-facebook', '3.0.0'
+gem 'omniauth-twitter', '1.2.1'
+gem 'dotenv-rails', '2.0.2'
 
 #Geo location and maps
 gem 'geocoder'
@@ -48,24 +49,24 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+gem 'sqlite3', '~> 1.3.11'
+# group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
 
-  # Use postgres as the database for Active Record
-  gem 'pg'
+  # Use sqlite3 as the database for Active Record
 
-end
+# end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
 end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+# group :production do
+#   gem 'sqlite3', '~> 1.3.0'
+#   # gem 'rails_12factor'
+# end
